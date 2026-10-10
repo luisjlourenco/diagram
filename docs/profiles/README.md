@@ -1,6 +1,8 @@
 # Perfis de marca
 
-## RD Station (TOTVS) — `rd-station.md`
+## RD Station (TOTVS) — perfil padrão desta skill
+
+Arquivo: [`skills/diagram-design/references/profile-rd-station.md`](../../skills/diagram-design/references/profile-rd-station.md). A skill já usa este perfil por padrão: basta instalar (`npx skills add luisjlourenco/diagram`) e pedir um diagrama. Para voltar à paleta original, peça "default skin".
 
 Skin do Diagram Design com os tokens do Tangram, o design system da RD Station.
 
@@ -13,20 +15,10 @@ Skin do Diagram Design com os tokens do Tangram, o design system da RD Station.
 | `link` | `#6e00c5` | `#b570ff` |
 | Tipografia | DM Sans (títulos e nomes) + Geist Mono (rótulos técnicos) | idem |
 
-Todos os papéis passam no contrato de contraste (`python3 scripts/verify-contrast.py --style-guide docs/profiles/rd-station.md`).
+Todos os papéis passam no contrato de contraste (`python3 scripts/verify-contrast.py --style-guide skills/diagram-design/references/profile-rd-station.md`).
 
-### Instalar na sua máquina
+### Outros projetos com outra marca
 
-```bash
-mkdir -p ~/.diagram-design/profiles
-curl -fsSL https://raw.githubusercontent.com/luisjlourenco/diagram/claude/epic-wozniak-afzvs0/docs/profiles/rd-station.md \
-  -o ~/.diagram-design/profiles/rd-station.md
-```
-
-Depois, no agente: *"diagram-design: load rd-station"* (aplica a todos os diagramas). Para fixar a marca só num projeto, crie na raiz dele um arquivo `.diagram-design` com:
-
-```text
-profile: rd-station
-```
+Para fixar um perfil diferente num projeto, crie na raiz dele um arquivo `.diagram-design` com `profile: <slug>` (ver `references/profiles.md`).
 
 Exemplos renderizados: [`rd-station-examples/`](rd-station-examples/).
